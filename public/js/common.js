@@ -117,7 +117,7 @@ const JCE = (function () {
         <span>&copy; ${new Date().getFullYear()} JC Enterprise &amp; Estate Management. Managing spaces, creating value.</span>
         <div class="social-row">
           <a href="tel:+2348034199497" title="Call us">📞</a>
-          <a href="mailto:info@jcenterprise.com" title="Email us">✉️</a>
+          <a href="mailto:joneskehindeoladehin@gmail.com" title="Email us">✉️</a>
           <a href="https://wa.me/2348034199497" target="_blank" rel="noopener" title="WhatsApp">💬</a>
         </div>
       </div>`;
