@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section id="gate" class="section wrap hidden"><div class="glass" style="padding:30px;"><p id="gate-msg"></p></div></section>
+
+<section id="admin-section" class="section wrap hidden">
+  <div class="section-head"><h2>Admin dashboard</h2></div>
+
+  <div class="stat-grid" id="stat-grid"></div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-dtab="listings">Listings</button>
+    <button class="tab-btn" data-dtab="users">Users</button>
+    <button class="tab-btn" data-dtab="blog">Blog</button>
+    <button class="tab-btn" data-dtab="testimonials">Testimonials</button>
+    <button class="tab-btn" data-dtab="inspections">Inspections</button>
+    <button class="tab-btn" data-dtab="messages">Messages</button>
+  </div>
+
+  <div id="d-tab-listings" class="d-tab-panel">
+    <div class="glass" style="padding:26px;">
+      <h2 style="font-size:1.15rem;">All listings</h2>
+      <div id="admin-listings" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+
+  <div id="d-tab-users" class="d-tab-panel hidden">
+    <div class="glass" style="padding:26px;">
+      <h2 style="font-size:1.15rem;">Users &amp; agents</h2>
+      <div id="admin-users" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+
+  <div id="d-tab-blog" class="d-tab-panel hidden">
+    <div class="dash-grid">
+      <div class="glass" style="padding:26px;">
+        <h2 style="font-size:1.15rem;">New blog post</h2>
+        <form id="blog-form" class="stack-form">
+          <input type="text" id="b-title" placeholder="Post title" required>
+          <input type="text" id="b-image" placeholder="Image URL (optional)">
+          <textarea id="b-body" rows="6" placeholder="Write the post…" required></textarea>
+          <button type="submit" class="btn btn-gold">Publish</button>
+          <p class="form-msg" id="blog-form-msg"></p>
+        </form>
+      </div>
+      <div class="glass" style="padding:26px;">
+        <h2 style="font-size:1.15rem;">Published posts</h2>
+        <div id="admin-blog" class="table-list"><p class="loading">Loading…</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="d-tab-testimonials" class="d-tab-panel hidden">
+    <div class="glass" style="padding:26px;">
+      <h2 style="font-size:1.15rem;">Reviews</h2>
+      <div id="admin-testimonials" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+
+  <div id="d-tab-inspections" class="d-tab-panel hidden">
+    <div class="glass" style="padding:26px;">
+      <h2 style="font-size:1.15rem;">All inspection requests</h2>
+      <div id="admin-inspections" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+
+  <div id="d-tab-messages" class="d-tab-panel hidden">
+    <div class="glass" style="padding:26px;">
+      <h2 style="font-size:1.15rem;">Contact form messages</h2>
+      <div id="admin-messages" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

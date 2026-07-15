@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Properties — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="section" style="padding-top:26px;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Browse properties</h2>
+      <div class="filters" id="category-filters">
+        <button class="filter-pill active" data-category="all">All</button>
+        <button class="filter-pill" data-category="sale">For Sale</button>
+        <button class="filter-pill" data-category="rent">For Rent</button>
+        <button class="filter-pill" data-category="commercial">Commercial</button>
+        <button class="filter-pill" data-category="land">Land</button>
+        <button class="filter-pill" data-category="shortlet">Short-let</button>
+      </div>
+    </div>
+
+    <form id="filter-form" class="glass search-bar" style="margin-top:0; margin-bottom:26px;">
+      <input type="text" id="f-location" placeholder="Location…">
+      <select id="f-type">
+        <option value="">Any type</option>
+        <option value="house">House</option>
+        <option value="apartment">Apartment</option>
+        <option value="land">Land</option>
+        <option value="office">Office</option>
+      </select>
+      <input type="number" id="f-min" placeholder="Min price">
+      <input type="number" id="f-max" placeholder="Max price">
+      <button type="submit" class="btn btn-gold">Filter</button>
+    </form>
+
+    <div id="listings-grid" class="listings-grid"><p class="loading">Loading properties…</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script src="/js/listings.js"></script>
+</body>
+</html>

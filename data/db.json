@@ -1,0 +1,209 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "name": "JC Enterprise Admin",
+      "email": "admin@jcenterprise.com",
+      "passwordHash": "fbf88c37dd3a158e31464bee1c64c8db:ca549a6bb93e4ca86a3ef91543e3fd12a0c800fbc09cee2cc02933d0381b8bb3ee2f024111383a941a086b93462fcc3ff9983222965c2b69cc5672811989e559",
+      "role": "admin",
+      "favorites": [],
+      "createdAt": "2026-01-01T09:00:00.000Z"
+    },
+    {
+      "id": "user-mrlrcxal-65373895",
+      "name": "Test Agent",
+      "email": "testagent-27616@example.com",
+      "passwordHash": "466b662a183b0762c983ae78923745f5:42c8d0b9b71d3dd0d8ed433200572ac81ab761a4fbb38026627629e32c2658e63361a7672d89dc0f0d3c9d9b05db88cf30f5a87b81ef3ebd619e604b86bf19b4",
+      "role": "agent",
+      "favorites": [],
+      "createdAt": "2026-07-15T07:27:55.586Z"
+    }
+  ],
+  "listings": [
+    {
+      "id": "sample-1",
+      "title": "5-Bedroom Duplex, Lekki Phase 1",
+      "category": "sale",
+      "propertyType": "house",
+      "price": 185000000,
+      "currency": "NGN",
+      "address": "Lekki Phase 1, Lagos, Nigeria",
+      "lat": 6.4432,
+      "lng": 3.4726,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "amenities": [
+        "24/7 Security",
+        "Swimming Pool",
+        "Fitted Kitchen",
+        "Parking Space",
+        "Generator House"
+      ],
+      "description": "A stately 5-bedroom duplex finished to a premium standard, featuring a private courtyard, staff quarters, and a rooftop terrace overlooking the estate. Fully fenced with 24-hour estate security.",
+      "media": [],
+      "featured": true,
+      "approved": true,
+      "agentId": "admin-1",
+      "createdAt": "2026-06-01T09:00:00.000Z",
+      "comments": [
+        {
+          "id": "c-1",
+          "name": "Adaeze O.",
+          "message": "Is this still available? I'd love to schedule a viewing.",
+          "createdAt": "2026-06-03T10:12:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "sample-2",
+      "title": "2 Acres of Prime Land, Epe",
+      "category": "land",
+      "propertyType": "land",
+      "price": 42000000,
+      "currency": "NGN",
+      "address": "Epe, Lagos, Nigeria",
+      "lat": 6.5833,
+      "lng": 3.9833,
+      "bedrooms": null,
+      "bathrooms": null,
+      "amenities": [
+        "Titled",
+        "Fenced",
+        "Dry Land"
+      ],
+      "description": "Dry, fenced, and titled land along the Epe corridor, ideal for residential or agricultural development. Survey and Governor's Consent available.",
+      "media": [],
+      "featured": true,
+      "approved": true,
+      "agentId": "admin-1",
+      "createdAt": "2026-06-05T09:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "sample-3",
+      "title": "3-Bedroom Serviced Apartment, Ikoyi",
+      "category": "rent",
+      "propertyType": "apartment",
+      "price": 8500000,
+      "currency": "NGN",
+      "address": "Ikoyi, Lagos, Nigeria",
+      "lat": 6.4541,
+      "lng": 3.4316,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "amenities": [
+        "Serviced",
+        "Gym",
+        "24/7 Power",
+        "Elevator"
+      ],
+      "description": "Fully serviced 3-bedroom apartment in a secure Ikoyi high-rise, walking distance to the waterfront. Annual rent, agency and legal fees apply.",
+      "media": [],
+      "featured": false,
+      "approved": true,
+      "agentId": "admin-1",
+      "createdAt": "2026-06-10T09:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "sample-4",
+      "title": "Short-let Studio, Victoria Island",
+      "category": "shortlet",
+      "propertyType": "apartment",
+      "price": 65000,
+      "currency": "NGN",
+      "address": "Victoria Island, Lagos, Nigeria",
+      "lat": 6.4281,
+      "lng": 3.4219,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Netflix",
+        "Daily Cleaning"
+      ],
+      "description": "Fully furnished studio for short stays in the heart of VI, per night. Ideal for business trips or weekend getaways.",
+      "media": [],
+      "featured": false,
+      "approved": true,
+      "agentId": "admin-1",
+      "createdAt": "2026-06-12T09:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "sample-5",
+      "title": "Commercial Office Complex, Ikeja GRA",
+      "category": "commercial",
+      "propertyType": "office",
+      "price": 320000000,
+      "currency": "NGN",
+      "address": "Ikeja GRA, Lagos, Nigeria",
+      "lat": 6.5793,
+      "lng": 3.3577,
+      "bedrooms": null,
+      "bathrooms": 6,
+      "amenities": [
+        "Elevator",
+        "Backup Power",
+        "Ample Parking",
+        "Conference Facility"
+      ],
+      "description": "A 4-floor commercial complex with open-plan office suites, currently at 70% occupancy, in a prime GRA business corridor.",
+      "media": [],
+      "featured": true,
+      "approved": true,
+      "agentId": "admin-1",
+      "createdAt": "2026-06-15T09:00:00.000Z",
+      "comments": []
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "blog-1",
+      "title": "5 Things to Check Before Buying Land in Lagos",
+      "excerpt": "From title verification to physical inspection, here's what to confirm before you pay a kobo.",
+      "body": "Before you commit funds to any parcel of land, verify the title (C of O, Governor's Consent, or Excision), confirm the land is free of government acquisition, physically inspect the site with a surveyor, check for any existing encumbrances at the land registry, and always use a licensed real estate professional to guide the transaction.",
+      "authorId": "admin-1",
+      "createdAt": "2026-05-01T09:00:00.000Z"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t-1",
+      "name": "Chinedu A.",
+      "rating": 5,
+      "message": "JC Enterprise handled my property purchase from start to finish — smooth and transparent.",
+      "approved": true,
+      "createdAt": "2026-04-01T09:00:00.000Z"
+    }
+  ],
+  "contactMessages": [],
+  "newsletter": [],
+  "inspections": [
+    {
+      "id": "insp-mrlrcykx-4e6dfcb0",
+      "listingId": "listing-mrlrcxhu-7e29523a",
+      "name": "Diagnostic",
+      "email": "",
+      "phone": "",
+      "date": "2026-08-01",
+      "time": "",
+      "userId": null,
+      "status": "pending",
+      "createdAt": "2026-07-15T07:27:57.201Z"
+    },
+    {
+      "id": "insp-mrlrlass-697ee24f",
+      "listingId": "listing-mrlrcxhu-7e29523a",
+      "name": "Diagnostic",
+      "email": "",
+      "phone": "",
+      "date": "2026-08-01",
+      "time": "",
+      "userId": null,
+      "status": "pending",
+      "createdAt": "2026-07-15T07:34:26.284Z"
+    }
+  ]
+}

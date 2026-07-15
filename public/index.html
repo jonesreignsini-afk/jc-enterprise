@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Enterprise & Estate Management</title>
+<meta name="description" content="Property sales, rentals, land, and estate management across Nigeria.">
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+
+<header class="topbar" id="app-header"></header>
+
+<section class="hero">
+  <div class="wrap hero-inner glass">
+    <p class="eyebrow">Property Sales · Rentals · Land · Estate Management</p>
+    <h1>Managing spaces, creating value.</h1>
+    <p class="hero-sub">JC Enterprise & Estate Management connects you with verified homes, land, and commercial property across Nigeria — with every listing photographed, mapped, and written up so you know exactly what you're getting.</p>
+    <div class="hero-actions">
+      <a href="/listings.html?category=sale" class="btn btn-gold">Buy a property</a>
+      <a href="/listings.html?category=rent" class="btn btn-ghost">Rent a property</a>
+      <a href="/contact.html" class="btn btn-ghost">Contact us</a>
+    </div>
+
+    <form id="hero-search" class="search-bar">
+      <input type="text" id="hs-location" placeholder="Location e.g. Lekki, Ikeja…">
+      <select id="hs-category">
+        <option value="all">Any status</option>
+        <option value="sale">For Sale</option>
+        <option value="rent">For Rent</option>
+        <option value="commercial">Commercial</option>
+        <option value="land">Land</option>
+        <option value="shortlet">Short-let</option>
+      </select>
+      <select id="hs-type">
+        <option value="">Any type</option>
+        <option value="house">House</option>
+        <option value="apartment">Apartment</option>
+        <option value="land">Land</option>
+        <option value="office">Office</option>
+      </select>
+      <select id="hs-bedrooms">
+        <option value="">Any bedrooms</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+      <button type="submit" class="btn btn-gold">Search</button>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured properties</h2>
+      <a href="/listings.html" class="btn btn-ghost btn-sm">View all</a>
+    </div>
+    <div id="featured-grid" class="listings-grid"><p class="loading">Loading…</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What we do</h2></div>
+    <div class="services-grid">
+      <div class="glass service-card"><span class="service-icon">🏠</span><h3>Property Sales</h3><p>Verified homes and commercial property, end to end.</p></div>
+      <div class="glass service-card"><span class="service-icon">🔑</span><h3>Property Rentals</h3><p>Annual lets and short-let apartments, hassle-free.</p></div>
+      <div class="glass service-card"><span class="service-icon">🏢</span><h3>Estate Management</h3><p>Full oversight for estates and multi-unit developments.</p></div>
+      <div class="glass service-card"><span class="service-icon">🛠️</span><h3>Facility Management</h3><p>Maintenance, security, and day-to-day facility upkeep.</p></div>
+      <div class="glass service-card"><span class="service-icon">🌍</span><h3>Land Sales</h3><p>Titled, surveyed land ready for development.</p></div>
+      <div class="glass service-card"><span class="service-icon">📊</span><h3>Property Valuation</h3><p>Accurate, market-backed valuations for any property.</p></div>
+      <div class="glass service-card"><span class="service-icon">🏗️</span><h3>Property Development</h3><p>From site acquisition to finished units.</p></div>
+      <div class="glass service-card"><span class="service-icon">🤝</span><h3>Real Estate Consulting</h3><p>Independent advice before you commit to a deal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What clients say</h2></div>
+    <div id="testimonials-grid" class="testimonial-grid"><p class="loading">Loading…</p></div>
+    <div class="text-center" style="margin-top:20px;">
+      <button id="open-review" class="btn btn-ghost btn-sm">Leave a review</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="glass newsletter-inner">
+      <div>
+        <p class="eyebrow">Stay informed</p>
+        <h2 style="margin-bottom:0;">Property alerts &amp; market news</h2>
+      </div>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+    </div>
+    <p class="form-msg" id="newsletter-msg" style="text-align:center;"></p>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+
+<!-- review modal -->
+<div id="review-overlay" class="modal-overlay hidden">
+  <div class="modal glass">
+    <button class="modal-close" id="review-close">&times;</button>
+    <h2>Leave a review</h2>
+    <form id="review-form" class="stack-form">
+      <input type="text" id="rv-name" placeholder="Your name" required>
+      <select id="rv-rating">
+        <option value="5">★★★★★ Excellent</option>
+        <option value="4">★★★★ Good</option>
+        <option value="3">★★★ Average</option>
+        <option value="2">★★ Poor</option>
+        <option value="1">★ Very poor</option>
+      </select>
+      <textarea id="rv-message" rows="4" placeholder="Tell us about your experience…" required></textarea>
+      <button type="submit" class="btn btn-gold">Submit review</button>
+      <p class="form-msg" id="review-msg"></p>
+    </form>
+  </div>
+</div>
+
+<script src="/js/common.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

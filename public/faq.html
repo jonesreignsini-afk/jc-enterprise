@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="hero">
+  <div class="wrap hero-inner glass">
+    <p class="eyebrow">FAQ</p>
+    <h1>Frequently asked questions</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap glass" style="padding:20px 34px; max-width:800px;">
+    <div class="faq-item">
+      <div class="faq-q">How do I book a property inspection? <span>+</span></div>
+      <div class="faq-a">Open any property page and click "Book an inspection." Choose a date and time, and our team will confirm by phone or email.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are your land listings verified? <span>+</span></div>
+      <div class="faq-a">Yes — every land listing is checked against the relevant state land registry before it goes live, and physically inspected by our team.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I list my property with JC Enterprise? <span>+</span></div>
+      <div class="faq-a">Register for an agent account, then add your listing from your agent dashboard. New listings are reviewed by our admin team before they go public.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I save properties to review later? <span>+</span></div>
+      <div class="faq-a">Yes — create a free account and tap the heart icon on any listing to save it to your favorites.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you handle rent payments and service charges? <span>+</span></div>
+      <div class="faq-a">We coordinate rent and service charge collection for properties under our estate management. Contact our office for the specific process on your property.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I reach the CEO's office directly? <span>+</span></div>
+      <div class="faq-a">Call 0803 419 9497 or see the About page for direct contact details.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script>
+JCE.renderChrome('faq');
+document.querySelectorAll('.faq-q').forEach((q) => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+});
+</script>
+</body>
+</html>

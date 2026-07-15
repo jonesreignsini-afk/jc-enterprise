@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="hero">
+  <div class="wrap hero-inner glass">
+    <p class="eyebrow">Contact</p>
+    <h1>We'd love to hear from you.</h1>
+    <p class="hero-sub">Reach out about a property, a valuation, or estate management for your building.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap dash-grid">
+    <div class="glass" style="padding:30px;">
+      <h2 style="font-size:1.3rem;">Send a message</h2>
+      <form id="contact-form" class="stack-form" style="margin-top:16px;">
+        <input type="text" id="c-name" placeholder="Your name" required>
+        <input type="email" id="c-email" placeholder="Email" required>
+        <input type="tel" id="c-phone" placeholder="Phone (optional)">
+        <textarea id="c-message" rows="5" placeholder="How can we help?" required></textarea>
+        <button type="submit" class="btn btn-gold">Send message</button>
+        <p class="form-msg" id="contact-msg"></p>
+      </form>
+    </div>
+    <div>
+      <div class="glass" style="padding:30px; margin-bottom:20px;">
+        <h2 style="font-size:1.3rem;">Reach us directly</h2>
+        <ul class="contact-list">
+          <li><span class="contact-label">Phone</span><a href="tel:+2348034199497">0803 419 9497</a></li>
+          <li><span class="contact-label">Email</span><a href="mailto:info@jcenterprise.com">info@jcenterprise.com</a></li>
+          <li><span class="contact-label">Office</span><span>Lagos, Nigeria</span></li>
+        </ul>
+        <a href="https://wa.me/2348034199497" target="_blank" rel="noopener" class="btn btn-gold btn-block" style="margin-top:10px;">Chat on WhatsApp</a>
+      </div>
+      <div class="modal-map glass" style="height:260px; padding:0;">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Lagos,Nigeria&z=11&output=embed"></iframe>
+      </div>
+      <p class="hint" style="margin-top:8px;">* Update the map query and office address above with your exact office location — see README.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script>
+JCE.renderChrome('contact');
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const msgEl = document.getElementById('contact-msg');
+  const payload = {
+    name: document.getElementById('c-name').value,
+    email: document.getElementById('c-email').value,
+    phone: document.getElementById('c-phone').value,
+    message: document.getElementById('c-message').value,
+  };
+  try {
+    const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    if (!res.ok) throw new Error();
+    msgEl.textContent = 'Message sent — we will get back to you shortly.';
+    msgEl.className = 'form-msg success';
+    document.getElementById('contact-form').reset();
+  } catch (err) {
+    msgEl.textContent = 'Could not send your message. Please try again.';
+    msgEl.className = 'form-msg error';
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "jc-enterprise-estate",
+  "version": "1.0.0",
+  "description": "JC Enterprise & Estate Management — property sales, rentals, land, and estate management site with user/agent/admin dashboards. Pure Node.js, zero dependencies.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=16" }
+}

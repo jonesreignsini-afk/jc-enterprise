@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="section" style="padding-top:26px;">
+  <div class="wrap">
+    <div id="listing-detail"><p class="loading">Loading property…</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+
+<div id="booking-overlay" class="modal-overlay hidden">
+  <div class="modal glass">
+    <button class="modal-close" id="booking-close">&times;</button>
+    <h2>Book an inspection</h2>
+    <form id="booking-form" class="stack-form">
+      <input type="text" id="bk-name" placeholder="Your name" required>
+      <input type="email" id="bk-email" placeholder="Email">
+      <input type="tel" id="bk-phone" placeholder="Phone">
+      <div class="two-col">
+        <input type="date" id="bk-date" required>
+        <input type="time" id="bk-time">
+      </div>
+      <button type="submit" class="btn btn-gold">Request inspection</button>
+      <p class="form-msg" id="booking-msg"></p>
+    </form>
+  </div>
+</div>
+
+<script src="/js/common.js"></script>
+<script src="/js/listing-detail.js"></script>
+</body>
+</html>

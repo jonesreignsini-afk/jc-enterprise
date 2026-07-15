@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Dashboard — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section id="gate" class="section wrap hidden"><div class="glass" style="padding:30px;"><p id="gate-msg"></p></div></section>
+
+<section id="agent-section" class="section wrap hidden">
+  <div class="section-head"><h2>Agent dashboard</h2></div>
+  <div class="tabs">
+    <button class="tab-btn active" data-atab="listings">My listings</button>
+    <button class="tab-btn" data-atab="inspections">Inspection requests</button>
+  </div>
+
+  <div id="a-tab-listings" class="a-tab-panel">
+    <div class="dash-grid">
+      <div class="glass" style="padding:30px;">
+        <p class="eyebrow" id="form-mode-label">New listing</p>
+        <h2>Add a property</h2>
+        <form id="listing-form" class="stack-form">
+          <input type="hidden" id="listing-id">
+          <label>Title<input type="text" id="f-title" required></label>
+          <div class="two-col">
+            <label>Status<select id="f-category">
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+              <option value="commercial">Commercial</option>
+              <option value="land">Land</option>
+              <option value="shortlet">Short-let</option>
+            </select></label>
+            <label>Type<select id="f-type">
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="land">Land</option>
+              <option value="office">Office</option>
+            </select></label>
+          </div>
+          <label>Price (₦)<input type="number" id="f-price"></label>
+          <label>Address<input type="text" id="f-address"></label>
+          <div class="two-col">
+            <label>Latitude<input type="text" id="f-lat"></label>
+            <label>Longitude<input type="text" id="f-lng"></label>
+          </div>
+          <p class="hint">Leave lat/lng blank to use the address for the map instead.</p>
+          <div class="two-col">
+            <label>Bedrooms<input type="number" id="f-bedrooms"></label>
+            <label>Bathrooms<input type="number" id="f-bathrooms"></label>
+          </div>
+          <label>Amenities (comma separated)<input type="text" id="f-amenities" placeholder="Swimming pool, 24/7 Security, Parking"></label>
+          <label>Write-up / description<textarea id="f-description" rows="5"></textarea></label>
+          <label>Photos / videos<input type="file" id="f-media" accept="image/*,video/*" multiple></label>
+          <div id="media-preview" class="media-preview"></div>
+          <div class="form-actions" style="display:flex; gap:10px;">
+            <button type="submit" class="btn btn-gold">Save listing</button>
+            <button type="button" id="cancel-edit" class="btn btn-ghost hidden">Cancel edit</button>
+          </div>
+          <p class="form-msg" id="listing-form-msg"></p>
+        </form>
+      </div>
+      <div class="glass" style="padding:30px;">
+        <h2 style="font-size:1.2rem;">Your listings</h2>
+        <div id="my-listings" class="table-list"><p class="loading">Loading…</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="a-tab-inspections" class="a-tab-panel hidden">
+    <div class="glass" style="padding:30px;">
+      <h2 style="font-size:1.2rem;">Inspection requests for your listings</h2>
+      <div id="agent-inspections" class="table-list"><p class="loading">Loading…</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script src="/js/agent.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="hero">
+  <div class="wrap hero-inner glass">
+    <p class="eyebrow">Blog</p>
+    <h1>Real estate tips &amp; market news</h1>
+    <p class="hero-sub">Investment advice, property guides, and what's moving in the market.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div id="blog-grid" class="listings-grid"><p class="loading">Loading posts…</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script>
+(async function () {
+  await JCE.renderChrome('blog');
+  const grid = document.getElementById('blog-grid');
+  try {
+    const res = await fetch('/api/blog');
+    const data = await res.json();
+    grid.innerHTML = (data.posts || []).length
+      ? data.posts.map((p) => `
+        <a href="/blog-post.html?id=${p.id}" class="card" style="cursor:pointer;">
+          <div class="card-media">${p.image ? `<img src="${JCE.escapeHTML(p.image)}" alt="">` : '<div class="no-media">JC Enterprise</div>'}</div>
+          <div class="card-body">
+            <h3>${JCE.escapeHTML(p.title)}</h3>
+            <p class="card-address">${JCE.escapeHTML(p.excerpt || '')}</p>
+            <span class="hint">${new Date(p.createdAt).toLocaleDateString()}</span>
+          </div>
+        </a>`).join('')
+      : '<p class="empty-state">No posts yet — check back soon.</p>';
+  } catch (e) {
+    grid.innerHTML = '<p class="empty-state">Could not load posts.</p>';
+  }
+})();
+</script>
+</body>
+</html>

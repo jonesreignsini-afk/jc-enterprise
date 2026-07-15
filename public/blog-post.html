@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Post — JC Enterprise</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="bg-scene" aria-hidden="true"><div class="bg-glow bg-glow-1"></div><div class="bg-glow bg-glow-2"></div></div>
+<header class="topbar" id="app-header"></header>
+
+<section class="section" style="padding-top:26px;">
+  <div class="wrap">
+    <div id="post-body" class="glass" style="padding:36px; max-width:760px; margin:0 auto;"><p class="loading">Loading…</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div id="app-footer"></div></footer>
+<script src="/js/common.js"></script>
+<script>
+(async function () {
+  await JCE.renderChrome('blog');
+  const id = new URLSearchParams(window.location.search).get('id');
+  const el = document.getElementById('post-body');
+  if (!id) { el.innerHTML = '<p class="empty-state">Post not found.</p>'; return; }
+  try {
+    const res = await fetch(`/api/blog/${id}`);
+    if (!res.ok) throw new Error();
+    const { post } = await res.json();
+    el.innerHTML = `
+      <p class="eyebrow">${new Date(post.createdAt).toLocaleDateString()}</p>
+      <h1>${JCE.escapeHTML(post.title)}</h1>
+      ${post.image ? `<img src="${JCE.escapeHTML(post.image)}" style="border-radius:14px; margin:16px 0;">` : ''}
+      <p style="color:var(--muted); white-space:pre-line;">${JCE.escapeHTML(post.body)}</p>
+      <a href="/blog.html" class="btn btn-ghost" style="margin-top:20px;">Back to blog</a>
+    `;
+  } catch (e) {
+    el.innerHTML = '<p class="empty-state">This post could not be found.</p>';
+  }
+})();
+</script>
+</body>
+</html>
